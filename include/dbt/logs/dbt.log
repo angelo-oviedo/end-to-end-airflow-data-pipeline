@@ -1820,3 +1820,22 @@ Compilation Error
 [0m04:40:53.998599 [debug] [MainThread]: Command `dbt ls` failed at 04:40:53.998514 after 0.48 seconds
 [0m04:40:53.999336 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffa84db640>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff8f4f25f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff8f6c8a00>]}
 [0m04:40:54.000117 [debug] [MainThread]: Flushing usage events
+[0m04:41:26.183876 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffa1edf640>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffa07b0be0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffa07b0b80>]}
+
+
+============================== 04:41:26.187084 | 144f2198-d6c2-45e9-8544-1bee360d1dd7 ==============================
+[0m04:41:26.187084 [info ] [MainThread]: Running with dbt=1.5.0
+[0m04:41:26.187981 [debug] [MainThread]: running dbt with arguments {'target_path': 'None', 'profiles_dir': '/usr/local/airflow/include/dbt', 'send_anonymous_usage_stats': 'True', 'introspect': 'True', 'partial_parse': 'True', 'log_format': 'default', 'no_print': 'None', 'version_check': 'True', 'use_experimental_parser': 'False', 'warn_error': 'None', 'printer_width': '80', 'use_colors': 'True', 'static_parser': 'True', 'log_cache_events': 'False', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'indirect_selection': 'eager', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'quiet': 'False', 'write_json': 'True', 'log_path': '/usr/local/airflow/include/dbt/logs'}
+[0m04:41:26.560745 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '144f2198-d6c2-45e9-8544-1bee360d1dd7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff88fb3880>]}
+[0m04:41:26.569519 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '144f2198-d6c2-45e9-8544-1bee360d1dd7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff88fad9f0>]}
+[0m04:41:26.579218 [debug] [MainThread]: checksum: 968d126075c9ab40c7baa9ff8a410f5fa1c19bf28113e215884a7db0fc4f5bb3, vars: {}, profile: retail, target: dev, version: 1.5.0
+[0m04:41:26.624419 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m04:41:26.625255 [debug] [MainThread]: Partial parsing: updated file: retail://models/transform/fct_invoices.sql
+[0m04:41:26.637074 [debug] [MainThread]: 1603: static parser failed on transform/fct_invoices.sql
+[0m04:41:26.652509 [debug] [MainThread]: 1602: parser fallback to jinja rendering on transform/fct_invoices.sql
+[0m04:41:26.653374 [error] [MainThread]: Encountered an error:
+Compilation Error
+  Model 'model.retail.fct_invoices' (models/transform/fct_invoices.sql) depends on a node named 'dim_customer' which was not found
+[0m04:41:26.654229 [debug] [MainThread]: Command `dbt ls` failed at 04:41:26.654144 after 0.48 seconds
+[0m04:41:26.654976 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffa1edf640>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff88dca590>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff88fac9a0>]}
+[0m04:41:26.655782 [debug] [MainThread]: Flushing usage events
