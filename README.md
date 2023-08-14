@@ -12,6 +12,9 @@ This repository showcases an end-to-end solution for analyzing retail data. Leve
 
 ## Overview
 
+![pipeline](https://github.com/angelo-oviedo/end-to-end-airflow-data-pipeline/assets/115840471/e0ad3079-15c5-4f01-9f61-e1fc1ed33a77)
+
+
 The project is designed to:
 1. Ingest raw retail data into Google Cloud.
 2. Perform data quality checks using Soda.
