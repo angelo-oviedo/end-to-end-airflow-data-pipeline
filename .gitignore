@@ -6,4 +6,4 @@ __pycache__/
 astro
 service_account.json
 gcp/
-
+config.yaml

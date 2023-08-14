@@ -53,6 +53,4 @@ def retail():
         use_native_support=False,
     )
 
-    
-    
 retail()
