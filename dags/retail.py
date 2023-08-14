@@ -24,33 +24,35 @@ def retail():
     upload_csv_to_gcs = LocalFilesystemToGCSOperator(
         task_id='upload_csv_to_gcs',
         src='include/dataset/online_retail.csv',
-        dst='raw/online_retail.csv',
+        dst='raw/online_retail.csv', 
         bucket='dataset_online_retail',
         gcp_conn_id='gcp',
         mime_type='text/csv',
     )
     
+    # This task will create a dataset in BigQuery
     create_retail_dataset = BigQueryCreateEmptyDatasetOperator(
         task_id='create_retail_dataset',
         dataset_id='retail',
         gcp_conn_id='gcp',
     )
     
+    # This task will load the csv file from GCS to a BigQuery table 
     gcs_to_raw = aql.load_file(
         task_id='gcs_to_raw',
         input_file=File(
-            'gs://airflow project/raw/online_retail.csv',
+            'gs://dataset_online_retail/raw/online_retail.csv',
             conn_id='gcp',
-            file_type=FileType.CSV,
+            filetype=FileType.CSV,
         ),
         output_table=Table(
             name='raw_invoices',
             conn_id='gcp',
             metadata=Metadata(schema='retail')
         ),
-        use_native_supported=False,
+        use_native_support=False,
     )
-    
+
     
     
 retail()
