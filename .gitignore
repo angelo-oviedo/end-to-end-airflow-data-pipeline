@@ -5,5 +5,4 @@ airflow_settings.yaml
 __pycache__/
 astro
 service_account.json
-gcp/
-config.yaml
+configuration.yaml
